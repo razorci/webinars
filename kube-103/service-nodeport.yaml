@@ -31,5 +31,4 @@ spec:
         - containerPort: 9876
 
 
-## kubectl exec -it jumpod -c shell -- ping demoss.default.svc.cluster.local
-##  kubectl exec -it jumpod -c shell -- curl http://demoss/info
+## curl http://172.25.0.2:31442/info

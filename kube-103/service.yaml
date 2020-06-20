@@ -31,4 +31,4 @@ spec:
 
 
 ## kubectl exec -it jumpod -c shell -- ping demoss.default.svc.cluster.local
-##  kubectl exec -it jumpod -c shell -- curl http://demoss/info
+## kubectl exec -it jumpod -c shell -- curl http://demoss/info
