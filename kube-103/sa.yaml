@@ -1,0 +1,28 @@
+kind: ServiceAccount
+metadata:
+  name: qa
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: qa-role
+rules:
+ - apiGroups: ["*"]
+   resources: ["pods"]
+   verbs: ["list","get","watch"]
+ - apiGroups: ["extensions","apps"]
+   resources: ["deployments"]
+   verbs: ["get","list","watch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: qa-pods
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: ServiceAccount
+  name: qa
+roleRef:
+ apiGroup: ""
+ kind: Role
+ name: qa-role
